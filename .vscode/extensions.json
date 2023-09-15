@@ -22,6 +22,8 @@
     "vue.vscode-typescript-vue-plugin",
     "vue.volar",
     "ms-vscode-remote.remote-wsl",
-    "golang.go"
+    "golang.go",
+    "panicbit.cargo",
+    "chenxuan.cargo-crate-completer"
   ]
 }
