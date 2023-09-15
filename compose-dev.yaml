@@ -6,10 +6,12 @@ services:
       dockerfile: Dockerfile
     container_name: debian-dev
     entrypoint: # 永久睡眠
-    - sleep
-    - infinity
+      - sleep
+      - infinity
     image: debian-dev:v1.0.0
     init: true
+    extra_hosts:
+      - "raw.githubusercontent.com:185.199.108.133"
     # volumes:
     # - type: bind
     #   source: /var/run/docker.sock
