@@ -12,7 +12,7 @@ services:
     init: true
     extra_hosts:
       - "raw.githubusercontent.com:185.199.108.133"
-      - "github.com:20.205.243.166"
+      - "github.com:20.205.243.166"`
       - "github.global.ssl.fastly.net:75.126.135.131"
       - "assets-cdn.github.com:185.199.110.153"
     hostname: zero
@@ -22,9 +22,9 @@ services:
       - 114.114.114.114
       - 8.8.8.8
     volumes:
-      - workspace:/workspace
-volumes:
-  workspace:
+      - .:/workspace
+# volumes:
+#   workspace:
     # volumes:
     # - type: bind
     #   source: /var/run/docker.sock
