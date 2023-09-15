@@ -22,7 +22,9 @@ services:
       - 114.114.114.114
       - 8.8.8.8
     volumes:
-      - /workspace
+      - workspace:/workspace
+volumes:
+  workspace:
     # volumes:
     # - type: bind
     #   source: /var/run/docker.sock
