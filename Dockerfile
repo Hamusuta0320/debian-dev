@@ -23,7 +23,6 @@ RUN cp /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/debian.sou
 sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources && \
 apt update && \
 apt upgrade && \
-echo 'zero' > /etc/hostname && \
 apt install git build-essential net-tools iputils-ping curl gnupg2 gcc g++ vim wget -yqq && \
 wget -q -O /workspace/rustup-init.sh https://sh.rustup.rs && \
 chmod +x /workspace/rustup-init.sh && \
@@ -55,7 +54,7 @@ apt install python3-pip -yqq && \
 pip config set global.index-url https://mirrors.ustc.edu.cn/pypi/web/simple
 # install nvm
 RUN mkdir -p /opt/.nvm && \
-echo "registry=${NPM_REGISTRY}}" > ~/.npmrc && \
+echo "registry=${NPM_REGISTRY}" > ~/.npmrc && \
 wget --no-dns-cache --no-check-certificate \
 --header 'Host: raw.githubusercontent.com' \
 --inet4-only -O /workspace/nvm.sh ${NVM_DOWNLOAD_URL} && \
@@ -63,5 +62,6 @@ chmod +x /workspace/nvm.sh && \
 /workspace/nvm.sh && \
 rm -rf /workspace/nvm.sh && \
 . ${NVM_DIR}/nvm.sh && \
-nvm install node --lts
+nvm install node --lts && \
+npm install -g yarn pnpm
 
