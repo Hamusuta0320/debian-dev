@@ -1,9 +1,20 @@
 [package]
 name = "hello-rust"
 version = "0.1.0"
+authors = ["Hamusuta"]
 edition = "2021"
+rust-version = "1.72.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 time = "0.3.28"
+regex = "1.9.5"
+
+[dependencies.salvo]
+version = "0.55.3"
+features = ["full"]
+
+[dependencies.tokio]
+version = "1.32.0"
+features = ["full"]

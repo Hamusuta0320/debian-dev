@@ -23,7 +23,7 @@ RUN cp /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/debian.sou
 sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources && \
 apt update && \
 apt upgrade && \
-apt install git build-essential net-tools iputils-ping curl gnupg2 gcc g++ vim wget -yqq && \
+apt install git build-essential pkg-config libssl-dev net-tools iputils-ping curl gnupg2 gcc g++ vim wget -yqq && \
 wget -q -O /workspace/rustup-init.sh https://sh.rustup.rs && \
 chmod +x /workspace/rustup-init.sh && \
 /workspace/rustup-init.sh -y && \
